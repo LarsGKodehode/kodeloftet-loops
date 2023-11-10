@@ -61,8 +61,17 @@ let secondProject = {
 
 let projects = [ firstProject, secondProject ]
 
-for (let i = 0; i < projects.length; i++) {
-  createProjectCard(projects[i])
+let currentIndex = 0
+while (currentIndex < projects.length)
+{
+  // Lag et nytt kort
+  const card = createProjectCard(projects[currentIndex])
+
+  // Finn hvor i dokumentet det skal legges til
+  let projectList = document.querySelector("#projects")
+
+  // Legg det til i dokuemntet
+  projectList.append(wrapper)
 }
 
 /**
@@ -70,16 +79,16 @@ for (let i = 0; i < projects.length; i++) {
  */
 function createProjectCard(projectInfo) {
   // Lag html elementet
-  let wrapper = document.createElement("li")
-  wrapper.innerHTML = `
+  let newCard = document.createElement("li")
+  
+  // Element.innerHTML er en annen måte å bestemme innholdet til et element
+  newCard.innerHTML = `
     <article>
       <img src=${projectInfo.image} />
       <h2>${projectInfo.title}</h2>
       <p>${projectInfo.body}</p>
     </article>
   `
-
-  // Legg det til i dokumentet (DOM)
-  let projectList = document.querySelector("#projects")
-  projectList.append(wrapper)
+  
+  return newCard
 }
