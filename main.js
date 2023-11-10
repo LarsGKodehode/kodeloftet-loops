@@ -15,24 +15,25 @@ let persons = [
 
 // En løkke, metode for å gjenta kode et sett med ganger
 // Ofte brukt i kombinasjon med lister (array)
-for (let iteration = 0; iteration < persons.length; iteration = iteration + 1)
+let count = 0
+while (count < persons.length)
 {
+  // konstruer en ny streng med navnet vi er på nå
   const greeting = "Greeting " + persons[iteration] + "!"
-  createListElement(greeting)
-}
 
-/**
- * Funksjon for å lage nye liste elementer
- */
-function createListElement(message) {
-  let wrapper = document.createElement("li")
+  // Lag et nytt HTML element
+  let greetingCard = document.createElement("li")
 
-  wrapper.innerHTML = `
-    <p>${message}</p>
-  `
-  
-  let listElement = document.querySelector("#greetings")
-  listElement.append(wrapper)
+  // Sett inholdet til elementet
+  greetingCard.textContent = greeting
+
+  // Finn ut hvor i HTML vi ønsker å plassere det nye elementet
+  let list = document.querySelector("#greetings")
+
+  // Legg det nye elementet til under listen vår
+  list.append(greetingCard)
+
+  count = count + 1
 }
 
 // ================ Eksempel på en game loop ================
