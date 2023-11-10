@@ -67,18 +67,23 @@ Ofte brukt i forbindelse med lister, men du finner de og igjen i spill, budsjett
 
 ```js
 // Kjør blokken med kode 10 ganger
-for (let iteration = 0; iteration < 10; iteration = iteration + 1)
+let count = 0
+
+while (count < 10)
 {
   // Legg logikken du ønsker å repetere her
-  console.log(iteration)
+  console.log(count)
+
+  count = count + 1
 }
 
 // Hvordan vi kan bruke de i forbindelse med lister (Array)
-let figurere = [ "Per", "Pål", "Espen" ]
+let navn = [ "Per", "Pål", "Espen" ]
 
-for (let i = 0; i < figurere.length; i++ )
+let count = 0
+while (count < navn.length)
 {
-  console.log(figurer[i])
+  console.log(navn[count])
 }
 ```
 
