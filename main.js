@@ -36,32 +36,6 @@ while (count < persons.length)
   count = count + 1
 }
 
-// ================ Eksempel på en game loop ================
-let startGameButton = document.querySelector("#start-game")
-startGameButton.addEventListener("click", startGame)
-
-/**
- * Funksjon for å starte spillet
- */
-function startGame() {
-  let playerScore = 0
-  
-  while (playerScore < 10) {
-    // Ask the player a question
-    let answer = prompt("Yes or No")
-    
-    if (answer === "Yes") {
-      playerScore++
-    } else if (answer === "No") {
-      playerScore = playerScore - 1
-    } else {
-      console.log("Please write 'Yes' or 'No'")
-    }
-  
-    console.log("New Score: " + playerScore)
-  }
-}  
-
 // ========== Objekter ========="
 // = - en samling av variabler ="
 // ============================="
